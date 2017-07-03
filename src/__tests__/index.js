@@ -195,6 +195,12 @@ test(
   'foo{bar:calc(1px + 1)}'
 );
 
+test(
+  'should expect LPAREN',
+  'foo{bar:calc(-(10px + (10px / 2)))}',
+  'foo{bar:calc(-(10px + (10px / 2)))}'
+);
+
 testThrows(
   'should throw an exception when attempting to divide by zero',
   'foo{bar:calc(500px/0)}',
